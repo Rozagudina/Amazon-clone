@@ -15,7 +15,7 @@ const Home=()=> {
 						id="49538094"
 						title="Canon EOS R6 Full-Frame Mirrorless Camera + RF24-105mm F4-7.1 is STM Lens Kit, Black (4082C022)
                         Visit the Canon Store"
-						price={(2, 799.0)}
+						price={(2799.0)}
 						rating={5}
 						
 						image="https://images-na.ssl-images-amazon.com/images/I/81VZhWiI9FL._AC_SL1500_.jpg"
@@ -26,7 +26,7 @@ const Home=()=> {
 						id="12321341"
 						title="Google - Pixel 3a with 64GB Memory Cell Phone (Unlocked) - Just Black
                           Visit the Google Store"
-						price={339.0}
+						price={339}
 						rating={5}
 					
 						image="https://images-na.ssl-images-amazon.com/images/I/81T-FKC695L._AC_SX679_.jpg"
@@ -38,7 +38,7 @@ const Home=()=> {
 						id="23445930"
 						title="Beats Solo3 Wireless On-Ear Headphones - Apple W1 Headphone Chip, Class 1 Bluetooth, 40 Hours of Listening Time, Built-in Microphone - Black (Latest Model)
                         Visit the Beats Store"
-						price={135.48}
+						price={135}
 						rating={4}
 						
 						image="https://images-na.ssl-images-amazon.com/images/I/51QxA-98Q%2BL._AC_SX342_.jpg"

@@ -12,7 +12,7 @@ function Checkout() {
 					className="checkout__ad"
 				/>
 				<h3>Hello</h3>
-				<h2 className="Checkout__title">Your shopping Basket</h2>
+				<h2 className="checkout__title">Your shopping Basket</h2>
 			</div>
 			<div className="checkout__right">
 				<SubTotal/>
