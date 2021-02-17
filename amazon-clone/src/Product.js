@@ -12,10 +12,10 @@ import { useStateValue } from "./StateProvider";
 					title: title,
 					image: image,
 					price: price,
-					rating:rating,
-				},
+					rating:rating
+				}
 			});
-		};
+		}
 
 		return (
 			<div className="product">

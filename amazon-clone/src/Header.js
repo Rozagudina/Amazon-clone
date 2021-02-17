@@ -5,8 +5,8 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 const Header = () => {
-    const [{ basket }, dispatch] = useStateValue();
-    
+	const [{ basket }, dispatch] = useStateValue();
+
 	return (
 		<div className="header">
 			<Link to="/">
@@ -18,14 +18,17 @@ const Header = () => {
 			</Link>
 
 			<div className="header__search">
-                <input className="header__searchInput" type="text" />
-                <SearchIcon className="header__searchIcon" />
+				<input className="header__searchInput" type="text" />
+				<SearchIcon className="header__searchIcon" />
 			</div>
-			
+
 			<div className="header__nav">
 				<div className="header__option">
-					<span className="header__optionLineOne">Hello Guest</span>
-					<span className="header__optionLineTwo">Sign In</span>
+					<Link to="/login">
+						<span className="header__optionLineOne">Hello Guest</span>
+
+						<span className="header__optionLineTwo">Sign In</span>
+					</Link>
 				</div>
 				<div className="header__option">
 					<span className="header__optionLineOne">Returns</span>
@@ -39,7 +42,9 @@ const Header = () => {
 				<Link to="/Checkout">
 					<div className="header__optionBasket">
 						<ShoppingBasketIcon />
-						<span className="header__optionLineTwo header__basketCount">{basket.length}</span>
+						<span className="header__optionLineTwo header__basketCount">
+							{basket.length}
+						</span>
 					</div>
 				</Link>
 			</div>
