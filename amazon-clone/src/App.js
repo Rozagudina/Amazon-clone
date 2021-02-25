@@ -46,7 +46,7 @@ function App() {
 					<Login />
 				</Route>
 				<Route exact path="/payment">
-					<Header />\
+					<Header />
 					<Elements stripe={promise}>
 						<Payment />
 					</Elements>
