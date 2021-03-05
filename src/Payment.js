@@ -7,6 +7,7 @@ import CheckoutProduct from './CheckoutProduct';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import axios from "./axios";
+import { db } from "./Firebase";
 const Payment = () => {
     const history = useHistory();
     const [{ basket, user }, dispatch] = useStateValue();
@@ -42,19 +43,33 @@ const Payment = () => {
         e.preventDefault(); 
         setProcessing(true);
 
-      const payload =await stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-        }).then(({ PaymentIntent }) => {
-            //paymentIntent=payment confirmation
-            setSucceeded(true);
-            setError(null);
-            setProcessing(false);
+      const payload = await stripe
+				.confirmCardPayment(clientSecret, {
+					payment_method: {
+						card: elements.getElement(CardElement),
+					},
+				})
+				.then(({ paymentIntent }) => {
+					//paymentIntent=payment confirmation
+					db.collection("users")
+						.doc(user?.uid)
+						.collection("orders")
+						.doc(paymentIntent.id)
+						.set({
+							basket: basket,
+							amount: paymentIntent.amount,
+							created: paymentIntent.created,
+						});
 
-            history.replace('/orders')
-        })
+					setSucceeded(true);
+					setError(null);
+					setProcessing(false);
+					dispatch({
+						type: "EMPTY_BASKET",
+					});
+
+					history.replace("/orders");
+				});
 
     
 

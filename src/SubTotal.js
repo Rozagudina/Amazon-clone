@@ -37,3 +37,9 @@ function SubTotal() {
 	);
 }
 export default SubTotal;
+
+
+
+
+
+// npm install -g firebase-tools

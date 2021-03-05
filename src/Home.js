@@ -73,7 +73,9 @@ const Home=()=> {
 						image="https://images-na.ssl-images-amazon.com/images/I/61%2BPvCYYNyL._AC_SL1001_.jpg"
 						
 					/>
+					
 				</div>
+
 			</div>
 		</div>
 	);
